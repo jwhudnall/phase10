@@ -1,4 +1,3 @@
-#future addition: convert winners to list of dictionaries with name:points if player has reached phase 10
 
 winners = []
 players = []
@@ -16,13 +15,9 @@ for num in range(1,player_count+1):
 	new_player = [name.title(),{'phase':1},{'points':0}]
 	players.append(new_player)
 
-#TEST ONLY ex: jim is on phase 0 and has 0 points.
-# for player in players:
-# 	print(f"{player[0]} is on phase {player[1]['phase']} and has {player[2]['points']} points.")
 
 #Hand starts
 #Validates round winner
-
 
 while len(winners) == 0:
 	# for player in players:
@@ -86,25 +81,3 @@ if len(winners) == 1:
 	print(f"{winners[0][0]} has won the game! ")
 else:
 	print(winners)
-
-
-
-
-
-
-
-
-
-#round1 - player goes out
-# while hand <=10:
-# 	print(f"We're on round {hand}.\n{hand}'s and Jokers are wild.\nDeal those cards!")
-# 	print("*" * 30)
-# 	while True:
-# 		knocker = input(f"For round {hand}, who knocked? ")
-# 		if knocker.title() not in players:
-# 			print("Please enter a valid player name.")
-# 		else:
-# 			break
-
-# for player in players:
-
