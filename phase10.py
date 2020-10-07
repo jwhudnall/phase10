@@ -9,15 +9,15 @@ while True:
 	else:
 		break
 
-#Populates the players list
+# Populates the players list
 for num in range(1,player_count+1): 
 	name = input(f"Who is player {num}? ")
 	new_player = [name.title(),{'phase':1},{'points':0}]
 	players.append(new_player)
 
 
-#Hand starts
-#Validates round winner
+# Hand starts
+# Validates round winner
 
 while len(winners) == 0:
 	# for player in players:
@@ -30,16 +30,16 @@ while len(winners) == 0:
 		if round_winner.title() not in [player[0] for player in players]:
 			print("Please enter a valid player name.")
 		else: 
-			#print(f"Good Job. {round_winner} is a valid player")
+			# Print(f"Good Job. {round_winner} is a valid player")
 			break
 
-	#establishes who won. Player will receive 0 points but progress 1 phase	
+	# Establishes who won. Player will receive 0 points but progress 1 phase	
 	for player in players:
 		if round_winner.title() == player[0]:
 			if player[1]['phase'] < 10:
 				player[1]['phase'] += 1
 			else:
-				#Player has finished Phase 10 and has their name and points added as a dictionary to "winners" list
+				# Player has finished Phase 10 and has their name and points added as a dictionary to "winners" list
 				player[1]['phase'] = 'Complete'
 				winners.append([player[0],[player[2]]])
 		else:
@@ -59,8 +59,8 @@ while len(winners) == 0:
 				else:
 					print("Please type yes or no. ")
 					
-					
-			while True: #ensures an integer is given
+			# Ensure an integer is given		
+			while True: 
 				try:
 					point_accrual = int(input(f"How many points did {player[0]} have? "))
 				except ValueError:
@@ -76,8 +76,9 @@ while len(winners) == 0:
 	##break loop when 'complete'
 
 #Need to add logic to discern winner if > 1
-print("The gamer is over!")
+print("The game is over!")
 if len(winners) == 1:
 	print(f"{winners[0][0]} has won the game! ")
 else:
+	print('We have more than one winner: ')
 	print(winners)
