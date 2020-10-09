@@ -26,9 +26,11 @@ This program becomes quite useful for tallying large scores, particularly with h
 ![Gameplay - High Scores](/images/gameplay-1.jpg)
 
 ## Game Over
-As soon as a player completes phase 10, the program checks to see if they are the only player having done so.
-* If so, that player is declared the winner
-* If not, all players that have completed Phase 10 have their scores checked; the lowest wins!
+As soon as a player completes phase 10, the program does the following:
+1. Have 1 or more players completed phase 10?
+    * If only one, that player is declared the winner
+    * If not, all players that have completed Phase 10 have their scores checked; the lowest wins!
+2. Display the winner(s).
 
 ![Game Over](/images/gameover.jpg)
 
